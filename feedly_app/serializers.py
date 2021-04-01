@@ -6,15 +6,12 @@ from feedly_app.models import Channel, Item
 class ChannelSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Channel
-		fields = [
-			"description",
-			"link",
-			"title",
-		]
+		fields = "__all__"
 
 
 class ItemSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Item
-		fields = "__all__"
+		exclude = ["channel"]
+
 		

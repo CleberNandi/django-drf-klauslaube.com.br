@@ -13,5 +13,5 @@ class ItemViewSet(viewsets.ModelViewSet):
 	
 	def get_queryset(self):
 		return Item.objects.filter(
-			Channel=self.kwargs['channel_pk']
+			channel=self.kwargs['channel_pk']
 		)
