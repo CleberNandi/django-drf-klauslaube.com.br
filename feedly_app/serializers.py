@@ -1,6 +1,6 @@
 from django.db.models import fields
 from rest_framework import serializers
-from feedly_app.models import Channel
+from feedly_app.models import Channel, Item
 
 
 class ChannelSerializer(serializers.ModelSerializer):
@@ -11,3 +11,10 @@ class ChannelSerializer(serializers.ModelSerializer):
 			"link",
 			"title",
 		]
+
+
+class ItemSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Item
+		fields = "__all__"
+		
